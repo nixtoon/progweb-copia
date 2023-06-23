@@ -1,0 +1,108 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% load humanize %}
+{% block title %}
+<title>Gorund Zero | Artistas</title>
+{% endblock %}
+
+<body>
+ {% block contenido %}
+
+  <!-- buscador -->
+  <div class="contenedor d-flex flex-row justify-content-end">
+    <div class="buscador">
+      <input type="text" placeholder="Buscar" required>
+      <div class="btn">
+        <i class="bi bi-search"></i>
+      </div>
+    </div>
+  </div>
+
+  <!-- seccion sobre mi usuario -->
+  <section class="usuario seccion-clara">
+    <div class="container">
+      <div class="row text-center">
+        <div class="col-12">
+          <h1 class="seccion-titulo">Mi Perfil</h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 col-md-4">
+          <div class="sobre-mi">
+            <h2>Acerca de mi</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Sed vulputate ligula in luctus dictum.
+              Mauris aliquam enim nec ligula tincidunt, id rutrum elit volutpat.
+              Aliquam cursus iaculis massa vel consequat.
+            </p>
+          </div>
+        </div>
+        <div class="col-12 col-md-4">
+          <div class="imagen-perfil">
+            <img class="img-fluid rounded-circle" src="{% static 'app/img/artistas/artista2.jpg' %}" alt="foto perfil">
+          </div>
+        </div>
+        <div class="col-12 col-md-4">
+          <div class="detalles mb-3">
+            <h2>Detalles</h2>
+            <p style="font-weight: bold;">Nombre:</p>
+            <p>{{ artista.nombre | capfirst }} {{ artista.apellido_paterno | capfirst }}</p>
+            <p style="font-weight: bold;">Edad:</p>
+            <p>29 años</p>
+            <p style="font-weight: bold;">Ubicación:</p>
+            <p>Londres, Inglaterra</p>
+            <p style="font-weight: bold;">Obras Publicadas:</p>
+            <p>6 obras publicadas</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- seccion obras -->
+  <section class="mis-obras seccion-clara-2">
+    <div class="container">
+      <div class="row text-center">
+        <h2 class="seccion-titulo" style="font-size: 3rem;">Mis Obras</h2>
+      </div>
+      <div class="row">
+        <!-- carrusel -->
+        <div id="productos-carrusel" class="carousel carousel-dark slide">
+          <div class="carousel-inner">
+            {% for p in obras %}
+            <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                <div class="container">
+                    <a href="{% url 'detalle_producto' p.id %}">
+                        <img class="producto-imagen img-fluid" src="{{ p.imagen.url }}" alt="producto1">
+                    </a>
+                    <h2>{{ p.titulo | title }}</h2>
+                    <p class="producto-texto">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Cras tellus libero, accumsan vel ipsum sed, lobortis finibus ex.
+                        Praesent eget massa posuere, sodales eros eu, euismod ante.
+                    </p>
+                    <div class="producto-info">
+                        <p class="artista">{{ p.artista | capfirst }}</p>
+                        <p class="categoria">{{ p.categoria | title }}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#productos-carrusel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Anterior</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#productos-carrusel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Siguiente</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}
+</body>
+
+</html>

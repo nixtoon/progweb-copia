@@ -1,0 +1,806 @@
+/* fuentes de google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&family=Share+Tech+Mono&display=swap');
+
+/* estilos generales */
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* barra de navagacion */
+.navbar {
+    padding: 1rem;
+    background-color: #FF6000;
+    font-size: 18px;
+    font-family: 'Share Tech Mono', monospace;
+}
+
+.navbar-brand img {
+    max-height: 50px;
+    max-width: 50px;
+}
+
+.navbar a {
+    color: #FFE6C7;
+}
+
+.navbar-collapse {
+    align-items: center;
+    justify-content: end;
+}
+
+.iniciar-sesion button {
+    max-height: 50px;
+    color: white;
+    font-weight: bold;
+    font-size: 13px;
+    background-color: transparent;
+    margin: 5px;
+    padding: 10px;
+    border: 2px solid white;
+    border-radius: 50px;
+    transition: all 0.2s ease-in-out;
+}
+
+.iniciar-sesion button:hover {
+    background-color: #FFE6C7;
+    color: black;
+}
+
+.iniciar-sesion button i {
+    color: white;
+    transition: all 0.2s ease-in-out;
+}
+
+.iniciar-sesion button:hover i {
+    color: black;
+}
+
+.registrarse button {
+    max-height: 50px;
+    color: white;
+    font-weight: bold;
+    font-size: 13px;
+    background-color: transparent;
+    padding: 10px;
+    border: 2px solid white;
+    border-radius: 50px;
+    transition: all 0.2s ease-in-out;
+}
+
+.registrarse button:hover {
+    background-color: #FFE6C7;
+    color: black;
+}
+
+.carro button {
+    max-height: 50px;
+    color: white;
+    font-weight: bold;
+    font-size: 13px;
+    background-color: transparent;
+    padding: 10px;
+    border: 2px solid white;
+    border-radius: 50px;
+    transition: all 0.2s ease-in-out;
+    margin: 5px;
+}
+
+.carro button:hover {
+    background-color: #FFE6C7;
+    color: black;
+}
+
+/* buscador */
+.contenedor {
+    padding: 20px;
+}
+
+.buscador {
+    position: absolute;
+    max-height: 50px;
+    padding: 5px;
+}
+
+.buscador input {
+    width: 0px;
+    height: 40px;
+    padding: 0 20px;
+    font-size: 18px;
+    color: #000;
+    outline: none;
+    border: 1px solid silver;
+    border-radius: 30px;
+    transition: all 0.7s ease;
+}
+
+.buscador .btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #454545;
+    width: 55px;
+    height: 55px;
+    line-height: 55px;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.buscador .btn i {
+    color: white;
+    font-size: 25px;
+    padding: 5px 0px 10px 5px;
+    justify-content: center;
+    align-items: center;
+}
+
+.buscador:hover input {
+    width: 240px;
+}
+
+.buscador input:focus {
+    width: 240px;
+}
+
+/* hero */
+/* seccion clara */
+.seccion-clara {
+    color: black;
+    min-height: 500px;
+    padding: 40px;
+}
+
+.seccion-titulo-hero {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 50px;
+}
+
+/* nosotros */
+/* seccion oscura */
+.seccion-oscura {
+    color: white;
+    background-color: #454545;
+    min-height: 500px;
+    padding: 10px;
+}
+
+.seccion-titulo {
+    font-family: 'Share Tech Mono', monospace;
+}
+
+.map{
+    height: 300px;
+    width: 100%;
+}
+
+.boton-mapa button {
+    background: #FF6000;
+    color: white;
+    margin: 20px;
+    transition: all 0.2s ease;
+}
+
+.boton-mapa button:hover {
+    background-color: white;
+    color: black;
+}
+
+.boton-mapa button i {
+    color: white;
+    font-size: 1.3rem;
+    transition: all 0.2s ease-in-out;
+}
+
+.boton-mapa button:hover i {
+    color: black;
+}
+
+
+/* productos destacados */
+.productos {
+    padding: 40px 40px 80px 40px;
+}
+
+.productos .carousel {
+    max-width: 800px;
+}
+
+.carousel-item {
+    height: 600px;
+}
+
+.carousel-item .container {
+    width: 100%;
+    min-height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.producto-imagen {
+    height: 250px;
+    width: 400px;
+    margin: 10px 10px 20px 10px;
+}
+
+.producto-texto {
+    max-width: 70%;
+    font-size: 20px;
+    text-align: center;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.producto-info {
+    font-weight: bold;
+    text-align: center;
+    min-height: 200px;
+}
+
+.producto-info p {
+    margin-bottom: 0;
+}
+
+.producto-info .artista {
+    font-size: 1.5rem;
+}
+
+.producto-info .categoria {
+    font-size: 0.9rem;
+    color: #454545;
+}
+
+.productos .ver-mas {
+    background-color: #FF6000;
+    color: white;
+}
+
+/* categorias */
+/* seccion clara 2 */
+.seccion-clara-2 {
+    color: black;
+    background-color: #FFA559;
+    min-height: 500px;
+    padding: 40px;
+}
+
+.categorias {
+    padding: 40px 40px 60px 40px;
+}
+
+.categorias .columna {
+    padding: 20px;
+    border: 2px solid #454545;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    transition: all 0.2s ease-in;
+}
+
+.categorias .columna:hover {
+    color: white;
+    background-color: #454545;
+}
+
+.cat-titulo {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 25px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+/* contacto */
+.seccion-oscura-2 {
+    color: white;
+    background-color: #454545;
+    height: 200px;
+    padding: 10px;
+}
+
+.contacto .container {
+    max-width: 1100px;
+    min-height: 200px;
+    padding: 20px;
+}
+
+.contacto .rectangulo {
+    margin-top: -3rem;
+    padding: 20px;
+    background-color: #FF6000;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contacto .descripcion {
+    color: white;
+    font-size: 1.5rem;
+}
+
+.contacto button {
+    color: white;
+    font-weight: bold;
+    background-color: transparent;
+    border: 2px solid #FFA559;
+    padding: 1.25em 2em;
+    margin: 10px;
+    border-radius: 100px;
+    transition: all 0.2s ease-in-out;
+}
+
+.contacto button:hover {
+    background-color: white;
+    color: black;
+}
+
+.contacto button i {
+    color: white;
+    font-size: 1.3rem;
+    transition: all 0.2s ease-in-out;
+}
+
+.contacto button:hover i {
+    color: black;
+}
+
+.seccion-titulo-contacto {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 2rem;
+}
+
+/* footer */
+footer {
+    min-height: 500px;
+}
+
+.footer-logo {
+    height: 80px;
+    width: 80px;
+    margin: 10px;
+}
+
+.footer-texto {
+    font-size: 1.5rem;
+    padding: 20px;
+    margin-bottom: 30px;
+    font-family: 'Share Tech Mono', monospace;
+}
+
+.iconos-redes-sociales a {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2px;
+    margin: 10px;
+    border: 2px solid white;
+    border-radius: 50%;
+    transition: all 0.2s ease-in;
+}
+
+.iconos-redes-sociales i {
+    color: white;
+    font-size: 1.5rem;
+    transition: all 0.2s ease-in;
+}
+
+.iconos-redes-sociales a:hover {
+    background-color: white;
+    border: 2px solid rgb(13, 110, 253);
+}
+
+.iconos-redes-sociales a:hover i {
+    color: black;
+}
+
+.derechos-autor {
+    font-size: 15px;
+    color: #aeaeae;
+    padding: 20px;
+}
+
+/* formulario de contacto */
+.btn-contacto {
+    background: #FF6000;
+    color: white;
+}
+
+.btn-contacto:hover {
+    background: white;
+    color: #FF6000;
+    border: 1px solid #FF6000;
+}
+
+.contacto-img img {
+    margin-top: 20px;
+}
+
+/* formulario de registrarse */
+.seccion-clara-3 {
+    color: black;
+    min-height: 600px;
+    padding: 20px;
+}
+
+.card {
+    border: 1px solid #FF6000;
+    box-shadow: 0 2px 4px 2px #454545;
+}
+
+.btn-registrarse button {
+    background: #FF6000;
+    color: white;
+    margin: 20px;
+    transition: all 0.2s ease;
+}
+
+.btn-registrarse button:hover {
+    background: white;
+    color: #FF6000;
+    border: 1px solid #FF6000;
+}
+
+/* navegacion */
+.navegacion {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navegacion a {
+    text-decoration: none;
+}
+
+/* agregar obra 
+.agregar-obra {
+    background: #FF512F;
+    background: -webkit-linear-gradient(to right, #F09819, #FF512F);
+    background: linear-gradient(to right, #F09819, #FF512F);
+}*/
+
+.seccion-obra-titulo {
+    color: black;
+    font-size: 40px;
+    font-family: 'Share Tech Mono', monospace;
+}
+
+.btn-agregar {
+    background: white;
+    color: #454545; 
+    border: 1px solid white;  
+    margin-bottom: 50px;  
+}
+
+.btn-agregar:hover {
+    background: white;
+    color: #FF6000;
+    border: 1px solid #FF6000;
+} 
+
+.agregar-obra label {
+    color: black;
+    font-size: 1.5rem;
+}
+
+
+/* Administrador */
+.seccion-obra-titulo-2 {
+    color: black;
+    font-size: 40px;
+    font-family: 'Share Tech Mono', monospace;
+}
+
+.revision td button {
+    margin: 2px ;
+}
+
+
+/* adaptable responsivo */
+@media screen and (max-width: 400px) {
+    .seccion-titulo-hero {
+        font-size: 30px;
+    }
+}
+
+@media screen and (max-width: 580px) {
+    .producto-imagen {
+        height: 150px;
+        width: 300px;
+        margin: 10px 10px 20px 10px;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .producto-imagen {
+        height: 100px;
+        width: 200px;
+        margin: 10px 10px 20px 10px;
+    }
+}
+
+@media screen and (max-width: 290) {
+    .contacto .descripcion {
+        font-size: 0.5rem;
+    }
+
+    .footer-logo {
+        height: 60px;
+        width: 60px;
+        margin: 10px;
+    }
+}
+
+/* OBRAS */
+
+.product-inner-box .icons{
+   right: 15px;
+   display: flex;
+   flex-direction: column;
+   gap: 4px;
+   top: -3%;
+   transition: all 0.2s ease-in-out, transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
+}
+.product-inner-box .icons a {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #454545;
+    border-radius: 100px;
+    transition: all 0.2s ease-in-out;
+    
+}
+
+.product-inner-box .featured .badge {
+    background: #fff;
+    font-size:  12px;
+    padding: 5px 14px;
+    top: 0px;
+    position: absolute;
+    color: #000;
+}
+
+.product-inner-box .featured .badge:before {
+    border-width: 10px 0px 0px 10px;
+    border-color: transparent transparent transparent #fff;
+    content: "";
+    position: absolute;
+    right: -8px;
+    width: 0;
+    bottom: 0;
+    border-style: solid;
+}
+
+.product-inner-box .featured .badge:after {
+    border-width: 10px 8px 0 10px;
+    border-color: #fff transparent transparent;
+    content: "";
+    position: absolute;
+    right: -8px;
+    width: 0;
+    top: 0;
+    border-style: solid;
+}
+
+.product-inner-box img {
+    box-shadow: 0 33px 61px -29px rgb(0 0 0 / 26%); 
+    height: 250px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.product-box.is-hover .icons{
+    transform: rotateY(3%);
+    top: 3%;
+    opacity: 1;
+}
+
+.cart-btn{ 
+    position:absolute;
+    right: 10px;
+    bottom: 10px;
+    text-align:right;
+    transition: all 0.2s ease-in-out;
+    color: #454545;
+}
+.cart-btn button{
+    background-color: #fff;
+
+}
+.cart-btn button:hover{
+    background-color: #ead4b8;
+
+}
+.fa-heart{
+    color: #ead4b8;
+}
+.fa-heart:hover{
+    color: #454545;
+
+}
+.product-name{
+    text-align: left;
+    font-family: 'Quicksand', sans-serif;
+    color: #454545;
+    margin-top: 10px;
+}
+
+.product-name h2{
+    font-size: 20px;
+
+}
+
+.artist-name{
+    text-align: left;
+    font-family: 'Quicksand', sans-serif;
+    color: #454545;
+    margin-top: 5px; 
+}
+
+.artist-name h3{
+    font-size: 15px;
+}
+.obras-title{
+    font-size: 5px;
+    font-family: 'Share Tech Mono', monospace;
+    color: #454545;
+}    
+.obras-sub-title{
+    font-family: 'Share Tech Mono', monospace;
+    font-style: italic;
+    color: #454545;
+    margin-top: 5px;
+}
+
+.product-box.is-hover .cart-btn{
+    opacity: 1;
+}
+
+.obras-zoom {
+  transition: transform .6s;
+  margin: 0 auto;
+}
+
+.obras-zoom:hover {
+  transform: scale(1.03); 
+}
+
+.small-img-group {
+    display: flex;
+    justify-content: space-between;
+}
+
+.small-img-col {
+    flex-basis: 24%;
+    cursor: pointer;
+}
+.sproduct select{
+    display: block;
+    padding: 5px 10px;
+
+}
+
+.sproduct input{
+    width: 50px;
+    height: 40px;
+    padding-left: 10px;
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+.sproduct input:focus{
+    outline: none;
+}
+
+#email-error {
+    color: darkred;
+}
+
+.form-control.error {
+    border: 1px solid darkred;
+}
+
+.help-block.error {
+    margin-bottom: 5px;
+  }
+
+/* DESPLIEGUE */
+#debit_panel, #credit_panel, #debit, #credit {
+    padding: 5px;
+    text-align: center;
+}
+
+#debit_panel {
+    padding: 150px;
+    display: none;
+}
+
+#credit_panel {
+    padding: 150px;
+    display: none;
+}
+
+#clave-error {
+    color: darkred;
+}
+
+/* CHECK OUT */
+.bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+
+  @media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+      font-size: 3.5rem;
+    }
+  }
+
+  .b-example-divider {
+    width: 100%;
+    height: 3rem;
+    background-color: rgba(0, 0, 0, .1);
+    border: solid rgba(0, 0, 0, .15);
+    border-width: 1px 0;
+    box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+  }
+
+  .b-example-vr {
+    flex-shrink: 0;
+    width: 1.5rem;
+    height: 100vh;
+  }
+
+  .bi {
+    vertical-align: -.125em;
+    fill: currentColor;
+  }
+
+  .nav-scroller {
+    position: relative;
+    z-index: 2;
+    height: 2.75rem;
+    overflow-y: hidden;
+  }
+
+  .nav-scroller .nav {
+    display: flex;
+    flex-wrap: nowrap;
+    padding-bottom: 1rem;
+    margin-top: -1px;
+    overflow-x: auto;
+    text-align: center;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .btn-bd-primary {
+    --bd-violet-bg: #712cf9;
+    --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+
+    --bs-btn-font-weight: 600;
+    --bs-btn-color: var(--bs-white);
+    --bs-btn-bg: var(--bd-violet-bg);
+    --bs-btn-border-color: var(--bd-violet-bg);
+    --bs-btn-hover-color: var(--bs-white);
+    --bs-btn-hover-bg: #6528e0;
+    --bs-btn-hover-border-color: #6528e0;
+    --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+    --bs-btn-active-color: var(--bs-btn-hover-color);
+    --bs-btn-active-bg: #5a23c8;
+    --bs-btn-active-border-color: #5a23c8;
+  }
+  .bd-mode-toggle {
+    z-index: 1500;
+  }

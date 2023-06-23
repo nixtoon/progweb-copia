@@ -1,0 +1,89 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block title %}
+<title>Gorund Zero | Iniciar Sesión</title>
+{% endblock %}
+
+{% block contenido %}
+  <!-- navegacion -->
+  <br>
+  <section class="navegacion">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item">
+                <a href="/">Inicio</a>
+              </li>
+              <li class="breadcrumb-item active" aria-current="page">
+                Iniciar Sesión
+              </li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- formulario iniciar sesion -->
+  <div class="seccion-clara d-flex">
+    <div class="container">
+      <div class="row justify-content-center align-items-center">
+        <div class="col-12 col-md-6">
+          <div class="card">
+            <div class="container">
+              <div class="card-title mt-5">
+                <h1 class="seccion-titulo">Iniciar Sesión</h1>
+              </div>
+
+              <form class="row g-3 mt-3" id="main" action="{% url 'login' %}" method="post">
+                {% csrf_token %}
+                {{ form }}
+                <div class="usuario-no-creado">
+                  ¿No tienes una cuenta?, registrate 
+                  <a href="{% url 'registrarse' %}">
+                    aquí.
+                  </a>
+                </div>
+
+                <div class="usuario-no-creado">
+                  ¿Quieres iniciar como 
+                  <a href="{% url 'iniciar_artista' %}">
+                    artista?
+                  </a>
+                </div>
+
+                <div class="d-flex justify-content-center mb-3">
+                  <input class="btn btn-primary" type="submit" id="iniciar" value="Iniciar">
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6">
+          <img class="img-fluid mt-5" src="{% static 'app/img/pinturas/pintura1.jpg' %}" alt="pintura1">
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}
+
+{% block js %}
+  <!-- libreria jquery -->
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"
+    integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+  <!-- libreria jquery validate -->
+  <!-- con este plugin podemos validar los compos de los formularios mas facil -->
+  <!-- se saca desde la siguiente url: https://jqueryvalidation.org/ -->
+  <!-- video que explica como usarlo https://www.youtube.com/watch?v=7-Op3T9kgJU&ab_channel=moisessepulveda -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
+  <!-- incorporamos las traducciones al español de los mensajes por defecto que posee el plugin de validación -->
+  <script src="{% static 'app/js/traducciones.js' %}"></script>
+  <!-- incorporamos el js con las validaciones -->
+  <script src="{% static 'app/js/formulario_iniciar.js' %}"></script>
+{% endblock %}
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% load humanize %}
+{% block title %}
+<title>Gorund Zero | Pinturas</title>
+{% endblock %}
+
+<body>
+
+  {% block contenido %}
+  <!-- menu grid-->
+  <section>
+    <div class="container mt-3">
+
+      <div class="row mb-5">
+        <h2 class="obras-sub-title">Pinturas</h2>
+      </div>
+      <div class="row mb-3">
+        {% for p in pinturas %}
+        <div class="col-12 col-md-3">
+          <div class="product-box">
+            <div class="product-inner-box position-relative obras-zoom">
+              {% if p.imagen %}
+              <a href="{% url 'detalle_producto' p.id %}">
+                <img src="{{ p.imagen.url }}" alt="Pintura" class="img-fluid">
+              </a>
+              {% else %}
+              <img src="{% static 'app/img/logo/logo.png'%}" alt="" class="img-fluid">
+              {% endif %}
+              <div class="cart-btn"> <!--boton carrito-->
+                <button class="btn btn-white shadow-sm rounded-pill">
+                  <i class="fa-solid fa-cart-plus"></i>
+                  Agregar al carro
+                </button>
+              </div>
+            </div>
+            <div class="product-info">
+              <div class="product-name">
+                <h2>{{ p.titulo | title }}</h2>
+              </div>
+              <div class="precio">
+                <h2>${{ p.precio | intcomma }}</h2>
+              </div>
+              <div class="artist-name">
+                <h3>{{ p.artista | capfirst }}</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {% endfor %}
+
+  </section>
+
+  {% endblock %}
+</body>
+
+</html>

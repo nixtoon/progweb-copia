@@ -1,0 +1,200 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% load humanize %}
+{% block contenido %}
+    <!-- buscador -->
+    <div class="contenedor d-flex flex-row justify-content-end">
+        <div class="buscador">
+            <input type="text" placeholder="Buscar" required>
+            <div class="btn">
+                <i class="bi bi-search"></i>
+            </div>
+        </div>
+    </div>
+
+    <!-- seccion hero -->
+    <section class="seccion-clara">
+        <div class="container contenedor-hero">
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    <img class="img-fluid" src="{% static 'app/img/pinturas/pintura1.jpg' %}" alt="pintura1">
+                </div>
+                <div class="col-12 col-md-6">
+                    <h1 class="seccion-titulo-hero">Cooperativa Artística Ground Zero</h1>
+                    <h2>Vive el Arte con Nosotros</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- nosotros -->
+    <section class="nosotros seccion-oscura">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12 col-md-6 mt-3">
+                    <h2 class="seccion-titulo text-center" style="font-size: 2rem;">Conócenos</h2>
+                    <p class="seccion-texto">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam et nulla a nisi
+                        dignissim dapibus.
+                        Curabitur ultrices erat in porta maximus. Vivamus eleifend gravida ullamcorper. Donec porttitor
+                        sollicitudin justo, in venenatis orci varius et. Mauris quis est diam. Praesent maximus, mauris
+                        nec
+                        malesuada porttitor, ante risus auctor leo, vitae consectetur quam odio non enim. Morbi tortor
+                        sem,
+                        hendrerit quis dolor at, ultricies iaculis orci. Nullam imperdiet consequat dignissim.
+                    </p>
+                </div>
+                <div class="col-12 col-md-6 mt-3 mb-5">
+                    <h3 class="seccion-titulo text-center" style="font-size: 2rem;">Visítanos</h3>
+                    <div class="map" id="map">
+
+                    </div>
+                    <div class="boton-mapa mt-3 d-flex justify-content-center">
+                        <a href="./templates/feriados.html">
+                            <button class="btn">
+                                Cerrado los siguientes días
+                                <i class="bi bi-info-circle"></i>
+                            </button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- productos destacados -->
+    <section class="productos seccion-clara">
+        <h2 class="seccion-titulo" style="font-size: 3rem;">Productos Destacados</h2>
+        <!-- carrusel -->
+        <div id="productos-carrusel" class="carousel carousel-dark slide">
+            <div class="carousel-inner">
+                {% for p in obras %}
+                <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                    <div class="container">
+                        <a href="{% url 'detalle_producto' p.id %}">
+                            <img class="producto-imagen img-fluid" src="{{ p.imagen.url }}" alt="producto1">
+                        </a>
+                        <h2>{{ p.titulo | title }}</h2>
+                        <p class="producto-texto">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            Cras tellus libero, accumsan vel ipsum sed, lobortis finibus ex.
+                            Praesent eget massa posuere, sodales eros eu, euismod ante.
+                        </p>
+                        <div class="producto-info">
+                            <p class="artista">{{ p.artista | capfirst }}</p>
+                            <p class="categoria">{{ p.categoria | title }}</p>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#productos-carrusel"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Anterior</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#productos-carrusel"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Siguiente</span>
+            </button>
+        </div>
+        <a href="#categorias">
+            <button type="button" class="btn ver-mas">
+                Ver Más
+                <i class="bi bi-arrow-right-circle"></i>
+            </button>
+        </a>
+    </section>
+
+    <!-- categorias -->
+    <section id="categorias" class="categorias seccion-clara-2">
+        <h2 class="seccion-titulo">Categorías</h2>
+        <div class="container text-center">
+            <div class="row">
+                <div class="columna col-12 col-md-3">
+                    <a href="{% url 'pinturas' %}">
+                        <img class="img-fluid" src="{% static 'app/img/categorias/pintura.jpg' %}" alt="categoria pintura">
+                    </a>
+                    <h2 class="cat-titulo">Pintura</h2>
+                </div>
+                <div class="columna col-12 col-md-3">
+                    <a href="{% url 'escultura' %}">
+                        <img class="img-fluid" src="{% static 'app/img/categorias/sculpture.jpg' %}" alt="categoria escultura">
+                    </a>
+                    <h2 class="cat-titulo">Escultura</h2>
+                </div>
+                <div class="columna col-12 col-md-3">
+                    <a href="{% url 'orfebreria' %}">
+                        <img class="img-fluid" src="{% static 'app/img/categorias/orfebreria.jpg' %}" alt="categoria orfebreria">
+                    </a>
+                    <h2 class="cat-titulo">Orfebrería</h2>
+                </div>
+                <div class="columna col-12 col-md-3">
+                    <a href="{% url 'tejidos' %}">
+                        <img class="img-fluid" src="{% static 'app/img/categorias/tejidos.jpg' %}" alt="categoria tejidos">
+                    </a>
+                    <h2 class="cat-titulo">Tejidos</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- artistas -->
+    <section id="artistas" class="categorias seccion-clara">
+        <h2 class="seccion-titulo">Artistas</h2>
+        <div class="container text-center">
+            <div class="row">
+                <div class="columna col-12 col-md-3">
+                    <a href="{% url 'mari' %}">
+                        <img class="img-fluid" src="{% static 'app/img/artistas/artista1.jpg' %}" alt="artista 1">
+                    </a>
+                    <h2 class="cat-titulo">Marí</h2>
+                </div>
+                <div class="columna col-12 col-md-3">
+                    <a href="{% url 'jose' %}">
+                        <img class="img-fluid" src="{% static 'app/img/artistas/artista2.jpg' %}" alt="artista 2">
+                    </a>
+                    <h2 class="cat-titulo">Jose</h2>
+                </div>
+                <div class="columna col-12 col-md-3">
+                    <a href="{% url 'constanza' %}">
+                        <img class="img-fluid" src="{% static 'app/img/artistas/artista3.jpg' %}" alt="artista 3">
+                    </a>
+                    <h2 class="cat-titulo">Constanza</h2>
+                </div>
+                <div class="columna col-12 col-md-3">
+                    <a href="{% url 'genesis' %}">
+                        <img class="img-fluid" src="{% static 'app/img/artistas/artista4.jpg' %}" alt="artista 4">
+                    </a>
+                    <h2 class="cat-titulo">Génesis</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- contacto -->
+    <section class="contacto seccion-oscura-2">
+        <div class="container">
+            <div class="container rectangulo">
+                <div class="row">
+                    <div class="col-12 col-md-4 seccion-titulo-contacto">
+                        ¡Contáctanos!
+                    </div>
+                    <div class="col-12 col-md-4 descripcion">
+                        Contáctanos para ver más de nuestro arte
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <a href="mailto: groundzero@micorreo.com">
+                            <button type="button">
+                                Contacto
+                                <i class="bi bi-envelope-check-fill"></i>
+                            </button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

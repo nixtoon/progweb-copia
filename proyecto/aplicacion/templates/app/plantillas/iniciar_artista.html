@@ -1,0 +1,100 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block title %}
+<title>Gorund Zero | Iniciar Sesión</title>
+{% endblock %}
+
+{% block contenido %}
+  <!-- navegacion -->
+  <br>
+  <section class="navegacion">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item">
+                <a href="/">Inicio</a>
+              </li>
+              <li class="breadcrumb-item active" aria-current="page">
+                <a href="/iniciar">Iniciar Sesión</a>
+              </li>
+              <li class="breadcrumb-item active" aria-current="page">
+                Artistas
+              </li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- formulario iniciar sesion -->
+  <div class="seccion-clara d-flex">
+    <div class="container">
+      <div class="row justify-content-center align-items-center">
+        <div class="col-12 col-md-6">
+          <div class="card">
+            <div class="container">
+              <div class="card-title mt-5">
+                <h1 class="seccion-titulo">Iniciar Sesión</h1>
+              </div>
+
+            <form class="row g-3 mt-3" id="main" action="./usuario.html" method="GET" novalidate>
+
+                <div class="form-group">
+                  <label class="col-sm-2 control-label" for="email">Correo</label>
+                  <div class="col-sm-12">
+                    <input id="email" class="form-control" type="email" placeholder="Correo" name="email">
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class="col-sm-2 control-label" for="clave">Contraseña</label>
+                  <div class="col-sm-12">
+                    <input id="clave" class="form-control" type="password" placeholder="Contraseña" name="password">
+                  </div>
+                </div>
+
+                <div class="usuario-no-creado">
+                  ¿No tienes una cuenta?, registrate 
+                  <a href="/registrarse">
+                    aquí
+                  </a>
+                </div>
+
+                <div class="btn-registrarse d-flex justify-content-center align-items-center">
+                  <button class="btn" type="submit" id="iniciar" onclick="cifrar()">
+                    Iniciar
+                    <i class="bi bi-check-circle"></i>
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 d-flex">
+          <img class="img-fluid mt-10" src="{% static 'app/img/logo/logo.png' %}" alt="pintura1">
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+ 
+{% block js %}
+  <!-- libreria jquery -->
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"
+    integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+  <!-- libreria jquery validate -->
+  <!-- con este plugin podemos validar los compos de los formularios mas facil -->
+  <!-- se saca desde la siguiente url: https://jqueryvalidation.org/ -->
+  <!-- video que explica como usarlo https://www.youtube.com/watch?v=7-Op3T9kgJU&ab_channel=moisessepulveda -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
+  <!-- incorporamos las traducciones al español de los mensajes por defecto que posee el plugin de validación -->
+  <script src="{% static 'app/js/traducciones.js' %}"></script>
+  <!-- incorporamos el js con las validaciones -->
+  <script src="{% static 'app/js/formulario_iniciar.js' %}"></script>
+{% endblock %}
+</body>
+
+</html>

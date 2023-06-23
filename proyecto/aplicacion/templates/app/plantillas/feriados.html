@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <!-- metadatos -->
+    <meta charset="UTF-8">
+    <meta name="author" content="Sebastian Arriagada, Nicolas Oses">
+    <meta name="description" content="Pagina web oficial de la Cooperativa Ground Zero">
+    <meta name="keywords" content="Ground-Zero, arte, pintura, escultura, orfebreria, tejidos">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- bootstrap 5.3.0 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+    <!-- bootstrap icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <!-- css -->
+    <link rel="stylesheet" href="../css/style.css">
+    <!-- favicon -->
+    <link rel="icon" type="image/x-icon" href="../img/logo/logo.png">
+    <!-- titulo de la pagina -->
+    <title>Ground Zero | Días Cerrados</title>
+</head>
+
+<body>
+    <!-- barra de navegacion -->
+    <nav class="navbar navbar-expand-md sticky-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="../index.html">
+                <img src="../img/logo/logo.png" alt="logo de la cooperativa"> Ground-Zero
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav text-center">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="../index.html">INICIO</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#categorias">CATEGORÍAS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#artistas">ARTISTAS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./contacto.html">CONTACTO</a>
+                    </li>
+                </ul>
+                <div class="d-flex flex-row justify-content-center align-items-center">
+                    <div class="iniciar-sesion mr-5">
+                        <a href="./iniciar.html">
+                            <button type="button">
+                                Iniciar
+                                <i class="bi bi-box-arrow-in-right"></i>
+                            </button>
+                        </a>
+                    </div>
+                    <div class="registrarse">
+                        <a href="./registrarse.html">
+                            <button type="button">
+                                Registrarse
+                                <i class="bi bi-check-circle"></i>
+                            </button>
+                        </a>
+                    </div>
+                    <div class="carro mr-5">
+                        <a href="./checkout.html">
+                          <button type="button">
+                            Carro
+                            <i class="bi bi-bag"></i>
+                          </button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- tabla de contenido -->
+    <section>
+        <div class="container">
+            <div class="row">
+                <h3 class="seccion-titulo mt-3">Feriados Año 2023</h3>
+            </div>
+            <div class="table-responsive mb-5">
+                <table class="table table-striped table-hover table-bordered" id="feriados">
+                    <thead>
+                        <tr>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Fecha</th>
+                            <th scope="col">Irrenunciable</th>
+                            <th scope="col">Tipo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- footer -->
+    <footer class="seccion-oscura d-flex flex-column align-items-center justify-content-center">
+        <img class="footer-logo" src="../img/logo/logo.png" alt="logo de la cooperativa">
+        <p class="footer-texto">Cooperativa Artística Ground Zero
+        <div class="iconos-redes-sociales d-flex flex-wrap align-items-center justify-content-center">
+            <a href="https://twitter.com/?lang=es" target="_blank" rel="noopener noreferrer">
+                <i class="bi bi-twitter"></i>
+            </a>
+            <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
+                <i class="bi bi-instagram"></i>
+            </a>
+            <a href="mailto: groundzero@micorreo.com" target="_blank" rel="noopener noreferrer">
+                <i class="bi bi-envelope"></i>
+            </a>
+            <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">
+                <i class="bi bi-linkedin"></i>
+            </a>
+        </div>
+        <div class="derechos-autor">Creado por Nicolás Oses, Sebastián Arriagada (2023) &#169;</div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.min.js"
+        integrity="sha384-heAjqF+bCxXpCWLa6Zhcp4fu20XoNIA98ecBC1YkdXhszjoejr5y9Q77hIrv8R9i"
+        crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            function irrenunciable(i) {
+                if (i == 0) {
+                    return ('Renunciable');
+                }
+                else {
+                    return ('Irrenunciable');
+                }
+            };
+            function fecha(fecha) {
+                return (fecha.substring(8, 10) + '/' + fecha.substring(5, 7) + '/' + fecha.substring(0, 4));
+            };
+            $.get("https://api.victorsanmartin.com/feriados/en.json",
+                function (datos) {
+                    $.each(datos.data, function (i, item) {
+                        $('#feriados').append("<tr><td>" + item.title + "</td><td>" + fecha(item.date) +
+                            "</td><td>" + irrenunciable(item.inalienable) +
+                            "</td><td>" + item.type + "</td></tr>");
+                    })
+                })
+        })
+    </script>
+</body>

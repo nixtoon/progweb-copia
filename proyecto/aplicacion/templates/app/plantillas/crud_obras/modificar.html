@@ -1,0 +1,120 @@
+{% extends 'app/base.html' %}
+
+{% block title %} 
+  <title>Ground Zero | Modificar</title>
+{% endblock %}
+
+{% block contenido %}
+<br><br><br>
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+
+        <div class="card">
+          <div class="card-body">
+
+            {% if obra %}
+
+            <form action="" method="post" enctype="multipart/form-data">
+
+              {% csrf_token %}
+
+              <div class="container">
+                <div class="row">
+
+                  <h1 class="seccion-obra-titulo">Modificar Obra</h1>
+                  <hr>
+
+                  <div class="col-12">
+                    <div class="mb-3">
+                      <label for="titulo" class="form-label">Titulo de la obra</label>
+                      <input type="text" name="titulo" class="form-control" id="titulo" placeholder="Titulo" value="{{ obra.titulo }}">
+                    </div>
+                  </div>
+
+                  <div class="col-6">
+                    <div class="mb-3">
+                      <label for="categoria" class="form-label">Categoría</label>
+                      <select class="form-select" name="categoria" id="categoria">
+
+                        {% for c in categorias %}
+
+                          {% if c.id == obra.categoria.id %}
+                            <option value="{{ c.id }}" selected>{{ c }}</option>
+                          {% else %}
+                            <option value="{{ c.id }}">{{ c }}</option>
+                          {% endif %} 
+
+                        {% endfor %}
+
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="col-6">
+                    <div class="mb-3">
+                      <label for="artista" class="form-label">Artista</label>
+                      <select class="form-select" name="artista" id="artista">
+                        
+                        {% for a in artistas %}
+
+                          {% if a.rut == obra.artista.rut %}
+                            <option value="{{ a.rut }}" selected>{{ a }}</option>
+                          {% else %}
+                            <option value="{{ a.rut }}">{{ a }}</option>
+                          {% endif %} 
+
+                        {% endfor %}
+
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="col-6">
+                    <div class="mb-3">
+                      <label for="precio" class="form-label">Precio</label>
+                      <input type="number" name="precio" class="form-control" id="precio" placeholder="Precio" value="{{ obra.precio }}">
+                    </div>
+                  </div>
+
+                  <div class="col-6">
+                    <div class="mb-3">
+                      <label for="fecha" class="form-label">Fecha de Publicación</label>
+                      <input type="date" name="fecha" class="form-control" id="fecha" value="{{ obra.fecha_publicacion|date:'Y-m-d' }}">
+                    </div>
+                  </div>
+
+                  <div class="col-6">
+                    <div class="mb-3">
+                      <label for="imagen" class="form-label">Imagen de la Obra</label><br>
+                      <input type="file" name="imagen" class="form-control" value="{{ obra.imagen }}">
+                    </div>
+                  </div>
+
+
+                  <div class="col-12">
+                    <div class="mb-3">
+                      <label for="descripcion" class="form-label">Descripción</label>
+                      <textarea class="form-control" name="descripcion" id="descripcion" rows="3">{{ obra.descripcion }}</textarea>
+                    </div>
+                  </div>
+
+                  <div class="d-flex justify-content-end">
+                    <input type="submit" value="Modificar Obra" class="btn btn-primary">
+                    &nbsp;
+                    <input type="reset" value="Cancelar" class="btn btn-danger">
+                  </div>
+
+                </div>
+
+            </form>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<br><br><br>
+{% endblock %}

@@ -1,0 +1,53 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% load humanize %}
+{% block title %}
+<title>Gorund Zero | Detalle Producto</title>
+{% endblock %}
+
+<!--fontawesome-->
+<script src="https://kit.fontawesome.com/50588777ca.js" crossorigin="anonymous"></script>
+
+
+<body>
+
+  {% block contenido %}
+  <!-- PRODUCTO-->
+  <section class="container sproduct mb-5">
+    <div class="row mt-5">
+      <div class="col-lg-5 col-md-12 col-12">
+        {% if obra.imagen %}
+        <img src="{{ obra.imagen.url }}" class="img-fluid w-100 pb-1" alt="">
+        {% endif %}
+        <!-- <div class="small-img-group">
+          <div class="small-img-col">
+            <img src="{% static 'app/img/productos/pinturas/p-edif-1.jpg' %}" width="100%" class="small-img" alt="">
+          </div>
+          <div class="small-img-col">
+            <img src="{% static 'app/img/productos/pinturas/p-edif-2.jpg' %}" width="100%" class="small-img" alt="">
+          </div>
+          <div class="small-img-col">
+            <img src="{% static 'app/img/productos/pinturas/p-edif-3.jpg' %}" width="100%" class="small-img" alt="">
+          </div>
+        </div> -->
+      </div>
+      <div class="col-lg-6 col-md-12 col-12">
+        <h6>Obras / {{ obra.categoria | title }}</h6>
+        <h2 class="py-4">{{ obra.titulo | title }}</h2>
+        <h3>${{ obra.precio | intcomma }}</h3>
+        <input type="number" value="1">
+        <button class="btn btn-white shadow-sm rounded-pill">
+          <i class="fa-solid fa-cart-plus"></i>
+          Agregar al carro
+        </button>
+        <h4 class="mt-5 mb-5">Detalle</h4>
+        <span>{{ obra.descripcion }}</span>
+      </div>
+    </div>
+  </section>
+
+  {% endblock %}
+
+</body>
+
+</html>

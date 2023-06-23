@@ -1,0 +1,42 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block title %}
+<title>Gorund Zero | Contacto</title>
+{% endblock %}
+
+{% block contenido %}
+  <!-- formulario de contacto -->
+  <section>
+    <div class="container-fluid">
+      <div class="row formulario seccion-clara">
+        <div class="col-12 col-md-6">
+          <div class="mb-3">
+            <h1 class="seccion-titulo">Contáctanos</h1>
+            <label for="exampleFormControlInput1" class="form-label">Nombre</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Nombre">
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Correo</label>
+            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="nombre@micorreo.com">
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Mensaje</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+          </div>
+          <div class="btn-enviar text-center">
+            <button class="btn btn-contacto" type="submit">
+              Enviar
+              <i class="bi bi-envelope-check-fill"></i>
+            </button>
+          </div>
+        </div>
+        <div class="contacto-img col-12 col-md-6">
+          <img class="img-fluid" src="{% static 'app/img/pinturas/pintura1.jpg' %}" alt="pintura1">
+        </div>
+      </div>
+    </div>
+  </section>
+
+ {% endblock %}
+
+</html>

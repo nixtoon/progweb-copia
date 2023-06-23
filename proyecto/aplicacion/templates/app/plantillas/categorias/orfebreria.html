@@ -1,0 +1,56 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% load humanize %}
+{% block title %}
+<title>Gorund Zero | Orfebrería</title>
+{% endblock %}
+
+{% block contenido %}
+<!-- menu grid-->
+<section>
+  <div class="container mt-3">
+
+    <div class="row mb-5">
+      <h2 class="obras-sub-title">Orfebrería</h2>
+    </div>
+    <div class="row mb-3">
+      {% for o in orfebreria %}
+      <div class="col-12 col-md-3">
+        <div class="product-box">
+          <div class="product-inner-box position-relative obras-zoom">
+            {% if o.imagen %}
+            <a href="{% url 'detalle_producto' o.id %}">
+              <img src="{{ o.imagen.url }}" alt="Pintura" class="img-fluid">
+            </a>
+            {% else %}
+            <img src="{% static 'app/img/logo/logo.png'%}" alt="" class="img-fluid">
+            {% endif %}
+            <div class="cart-btn"> <!--boton carrito-->
+              <button class="btn btn-white shadow-sm rounded-pill">
+                <i class="fa-solid fa-cart-plus"></i>
+                Agregar al carro
+              </button>
+            </div>
+          </div>
+          <div class="product-info">
+            <div class="product-name">
+              <h2>{{ o.titulo | title }}</h2>
+            </div>
+            <div class="precio">
+              <h2>${{ o.precio | intcomma }}</h2>
+            </div>
+            <div class="artist-name">
+              <h3>{{ o.artista | capfirst }}</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {% endfor %}
+
+</section>
+
+{% endblock %}
+</body>
+
+</html>

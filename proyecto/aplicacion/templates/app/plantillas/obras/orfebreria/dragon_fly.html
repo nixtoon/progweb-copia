@@ -1,0 +1,160 @@
+{% load static %}
+<!doctype html>
+<html lang="es">
+
+<head>
+  <!-- metadatos -->
+  <meta charset="utf-8">
+  <meta name="author" content="Sebastian Arriagada, Nicolas Oses">
+  <meta name="description" content="Pagina web oficial de la Cooperativa Ground Zero">
+  <meta name="keywords" content="Ground-Zero, arte, pintura, escultura, orfebreria, tejidos">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!--fontawesome-->
+  <script src="https://kit.fontawesome.com/50588777ca.js" crossorigin="anonymous"></script>
+
+  <!-- bootstrap icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+
+
+  <!-- bootstrap 5.3.0 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+
+  <!--css-->
+  <link rel="stylesheet" href="{% static 'app/css/style.css' %}">
+
+  <!-- favicon -->
+  <link rel="icon" type="image/x-icon" href="{% static 'app/img/logo/logo.png' %}">
+
+  <!-- titulo -->
+  <title>Ground Zero | Pinturas</title>
+
+</head>
+
+<body>
+  <!-- barra de navegacion -->
+  <nav class="navbar navbar-expand-md sticky-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/">
+        <img src="{% static 'app/img/logo/logo.png' %}" alt="logo de la cooperativa"> Ground-Zero
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav text-center">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="/">INICIO</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="/#categorias">CATEGORÍAS</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/#artistas">ARTISTAS</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/contacto">CONTACTO</a>
+          </li>
+        </ul>
+        <div class="d-flex flex-row justify-content-center align-items-center">
+          <div class="iniciar-sesion mr-5">
+            <a href="/iniciar">
+              <button type="button">
+                Iniciar
+                <i class="bi bi-box-arrow-in-right"></i>
+              </button>
+            </a>
+          </div>
+          <div class="registrarse">
+            <a href="/registrarse">
+              <button type="button">
+                Registrarse
+                <i class="bi bi-check-circle"></i>
+              </button>
+            </a>
+          </div>
+          <div class="carro mr-5">
+            <a href="/checkout">
+              <button type="button">
+                Carro
+                <i class="bi bi-bag"></i>
+              </button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- PRODUCTO-->
+  <section class="container sproduct mb-5">
+    <div class="row mt-5">
+      <div class=" col-lg-5 col-md-12 col-12">
+        <img class="img-fluid w-100 pb-1" src="{% static 'app/img/productos/orfebreria/o-drfly-1.jpg' %}" alt="">
+        <div class="small-img-group">
+          <div class="small-img-col">
+            <img src="{% static 'app/img/productos/orfebreria/o-drfly-1.jpg' %}" width="100%" class="small-img" alt="">
+          </div>
+          <div class="small-img-col">
+            <img src="{% static 'app/img/productos/orfebreria/o-drfly-2.jpg' %}" width="100%" class="small-img" alt="">
+          </div>
+          <div class="small-img-col">
+            <img src="{% static 'app/img/productos/orfebreria/o-drfly-3.jpg' %}" width="100%" class="small-img" alt="">
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-12 col-12">
+        <h6>Obras / Orfebreria</h6>
+        <h2 class="py-4">Dragon fly</h2>
+        <h5>Precio no disponible</h5>
+        <input type="number" value="1">
+        <button class="btn btn-white shadow-sm rounded-pill"><i class="fa-solid fa-cart-plus"></i>Agregar al
+          carro</button>
+        <h4 class="mt-5 mb-5">Detalle</h4>
+        <span>Etiam urna quam, pretium at ultrices sed, interdum eget quam. Donec porttitor augue ac justo elementum, id
+          posuere
+          lorem euismod. Nam efficitur eleifend lectus. Donec venenatis purus nec quam viverra, imperdiet semper magna
+          laoreet.
+          Nam ante elit, porta sit amet elit vel, rhoncus ultrices erat. Integer ac ultrices leo, vel auctor lacus.
+          Suspendisse
+          rhoncus orci non nulla laoreet feugiat. Phasellus lectus purus, dictum at neque sed, vestibulum interdum enim.
+          Phasellus
+          quis nulla sed arcu maximus pretium. </span>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- footer -->
+  <footer class="seccion-oscura d-flex flex-column align-items-center justify-content-center">
+    <img class="footer-logo" src="{% static 'app/img/logo/logo.png' %}" alt="logo de la cooperativa">
+    <p class="footer-texto">Cooperativa Artística Ground Zero
+    <div class="iconos-redes-sociales d-flex flex-wrap align-items-center justify-content-center">
+      <a href="https://twitter.com/?lang=es" target="_blank" rel="noopener noreferrer">
+        <i class="bi bi-twitter"></i>
+      </a>
+      <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
+        <i class="bi bi-instagram"></i>
+      </a>
+      <a href="mailto: groundzero@micorreo.com" target="_blank" rel="noopener noreferrer">
+        <i class="bi bi-envelope"></i>
+      </a>
+      <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">
+        <i class="bi bi-linkedin"></i>
+      </a>
+    </div>
+    <div class="derechos-autor">Creado por Nicolás Oses, Sebastián Arriagada (2023) &#169;</div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.min.js"
+    integrity="sha384-heAjqF+bCxXpCWLa6Zhcp4fu20XoNIA98ecBC1YkdXhszjoejr5y9Q77hIrv8R9i"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

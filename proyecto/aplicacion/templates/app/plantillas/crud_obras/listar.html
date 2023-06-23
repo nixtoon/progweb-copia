@@ -1,0 +1,78 @@
+{% extends 'app/base.html' %}
+{% load humanize %}
+{% block js %}
+
+<script>
+  function eliminarProducto(id) {
+    Swal.fire({
+      "title": "¿Estás Seguro?",
+      "text": "Esta acción no se puede deshacer",
+      "icon": "question",
+      "showCancelButton": true,
+      "cancelButtonText": "No, Cancelar",
+      "confirmButtonText": "Si, Eliminar",
+      "reverseButtons": true,
+      "confirmButtonColor": "#dc3545",
+    })
+    .then(function(result){
+      if(result.isConfirmed){
+        window.location.href = "/eliminar_obras/"+id+"/"
+      }
+    })
+  }  
+</script>
+
+{% endblock %}
+
+
+{% block contenido %}
+
+<br><br><br>
+<div class="container-fluid">
+  <div class="table-reponsive">
+    <table class="table table-striped">
+      <h2 class="seccion-titulo">Listado de Obras</h2>
+      <hr>
+      <thead>
+        <tr>
+          <th scope="col">Titulo</th>
+          <th scope="col">Precio</th>
+          <th scope="col">Fecha Publicación</th>
+          <th scope="col">Categoría</th>
+          <th scope="col">Artista</th>
+          <th scope="col">Descripción</th>
+          <th scope="col">Imagen</th>
+          <th scope="col">Opciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for p in obras %}
+        <tr>
+          <td>{{ p.titulo | title }}</td>
+          <td>${{ p.precio | intcomma }}</td>
+          <td>{{ p.fecha_publicacion}}</td>
+          <td>{{ p.categoria | title }}</td>
+          <td>{{ p.artista | title }}</td>
+          <td>{{ p.descripcion }}</td>
+          {% if p.imagen %}
+          <td><img style="width: 100px; height: 100px;"  class="img-fluid" src="{{ p.imagen.url }}" alt=""></td>
+          {% else%}
+          <td></td>
+          {% endif %}
+          <td>
+            <a href="{% url 'modificar_obras' p.id %}" class="btn btn-info btn-sm text-white">Modificar</a>
+            <a href="#" onclick="eliminarProducto({{ p.id }})" class="btn btn-danger btn-sm text-white">Eliminar</a> 
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <hr>
+    <div class="d-flex justify-content-end">
+      <a href="{% url 'agregar_obras' %}" class="btn btn-primary">Agregar nueva Obra</a>
+    </div>
+  </div>
+</div>
+<br><br><br>
+
+{% endblock %}

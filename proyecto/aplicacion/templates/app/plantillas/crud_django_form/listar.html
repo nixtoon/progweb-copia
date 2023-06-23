@@ -1,0 +1,65 @@
+{% extends 'app/base.html' %}
+{% load humanize %}
+{% block titulo %}
+<title>Ground Zero | Categorias</title>
+{% endblock %}
+{% block js %}
+
+<script>
+  function eliminarProducto(id) {
+    Swal.fire({
+      "title": "¿Estás Seguro?",
+      "text": "Esta acción no se puede deshacer",
+      "icon": "question",
+      "showCancelButton": true,
+      "cancelButtonText": "No, Cancelar",
+      "confirmButtonText": "Si, Eliminar",
+      "reverseButtons": true,
+      "confirmButtonColor": "#dc3545",
+    })
+    .then(function(result){
+      if(result.isConfirmed){
+        window.location.href = "/eliminar_categorias/"+id+"/"
+      }
+    })
+  }  
+</script>
+
+{% endblock %}
+
+{% block contenido %}
+<br><br><br>
+<div class="container">
+  <div class="table-reponsive">
+    <table class="table table-striped">
+      <h2 class="seccion-titulo">Lista de Categorías</h2>
+      <hr>
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Categoria</th>
+          <th scope="col">Opciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for c in categorias %}
+        <tr>
+          <td>{{ c.id }}</td>
+          <td>{{ c.nombre | title }}</td>
+          <td>
+            <a href="{% url 'modificar_categorias' c.id %}" class="btn btn-info btn-sm text-white">Modificar</a>
+            <a href="#" onclick="eliminarProducto({{ c.id }})" class="btn btn-danger btn-sm text-white">Eliminar</a> 
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <hr>
+    <div class="d-flex justify-content-end">
+      <a href="{% url 'agregar_categorias' %}" class="btn btn-primary">Agregar nueva Categoria</a>
+    </div>
+  </div>
+</div>
+<br><br><br>
+
+{% endblock %}

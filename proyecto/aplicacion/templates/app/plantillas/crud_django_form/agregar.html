@@ -1,0 +1,35 @@
+{% extends 'app/base.html' %}
+{% load humanize %}
+{% block titulo %}
+<title>Ground Zero | Agregar Categorias</title>
+{% endblock %}
+
+{% block contenido %}
+<br><br><br>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body">
+          <form action="" method="post">
+            <h2 class="seccion-titulo">Agregar Categoría</h2>
+            <hr>
+            {% csrf_token %}
+            {{ form.as_table }}
+            <div>
+              <a href="{% url 'listar_categorias' %}">Volver</a>
+            </div>
+            <div class="d-flex justify-content-end">
+              <input type="submit" value="Agregar Categoria" class="btn btn-primary"> 
+              &nbsp
+              <input type="reset" value="Cancelar" class="btn btn-danger">
+            </div>
+          
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<br><br><br>
+{% endblock %}
